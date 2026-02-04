@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Record System</title>
+    <style>
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 50px;
+            color: #330000;
+        }
+
+        /* Container for everything */
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #800000; /* Maroon */
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        form label {
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+            color: #4d0000;
+            font-size: 14px;
+        }
+
+        form input {
+            padding: 5px 8px;
+            border: 1px solid #800000;
+            border-radius: 4px;
+            width: 100px;
+            text-align: center;
+        }
+
+        form button {
+            background-color: #800000;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            align-self: flex-end;
+        }
+
+        form button:hover {
+            background-color: #a00000;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th {
+            background-color: #800000;
+            color: white;
+            padding: 10px 5px;
+        }
+
+        td {
+            padding: 8px 5px;
+            border: 1px solid #800000;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2e6e6;
+        }
+
+        tr:hover {
+            background-color: #ffe6e6;
+        }
+
+        button.delete-btn {
+            background-color: #cc0000;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        button.delete-btn:hover {
+            background-color: #ff3333;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lovely June S. Villocillo - 23-0217-474</h1>
+
+        <form id="studentForm">
+            <label>ID: <input type="number" id="idField" required></label>
+            <label>Name: <input type="text" id="nameField" required></label>
+            <label>Lab1: <input type="number" id="lab1Field" required></label>
+            <label>Lab2: <input type="number" id="lab2Field" required></label>
+            <label>Lab3: <input type="number" id="lab3Field" required></label>
+            <label>Prelim Exam: <input type="number" id="prelimField" required></label>
+            <label>Attendance: <input type="number" id="attendanceField" required></label>
+            <button type="submit">Add</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
