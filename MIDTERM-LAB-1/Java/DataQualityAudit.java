@@ -55,7 +55,6 @@ public class DataQualityAudit {
                 return;
             }
 
-            // FIXED: Proper CSV split (handles quoted commas)
             String[] headers = headerLine.split(
                 ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1
             );
@@ -76,7 +75,6 @@ public class DataQualityAudit {
 
                 totalRecords++;
 
-                // FIXED: Proper CSV split
                 String[] columns = line.split(
                     ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1
                 );
@@ -111,7 +109,7 @@ public class DataQualityAudit {
                 }
 
                 // =========================
-                // Invalid Date (specific column only)
+                // Invalid Date
                 // =========================
                 if (dateColumnIndex >= 0 && dateColumnIndex < columns.length) {
 
