@@ -67,8 +67,7 @@ function loadDataset(filePath) {
 }
 
 // ==========================
-// CSV SPLIT FUNCTION
-// Handles quoted fields
+// CSV
 // ==========================
 function splitCsvLine(line) {
     if (!line) return [];
@@ -97,7 +96,6 @@ function splitCsvLine(line) {
 
 // ==========================
 // STRICT DATE VALIDATION
-// Matches Java LocalDate.parse("yyyy-MM-dd")
 // ==========================
 function isValidDateStrict(dateStr) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
@@ -135,7 +133,7 @@ function analyzeData(lines) {
         const columns = splitCsvLine(line);
 
         // ==========================
-        // COUNT MISSING VALUES (MATCH JAVA)
+        // COUNT MISSING VALUES
         // ==========================
         for (let i = 0; i < headers.length; i++) {
             const value = columns[i];
@@ -169,7 +167,7 @@ function analyzeData(lines) {
         }
 
         // ==========================
-        // INVALID DATE CHECK (STRICT)
+        // INVALID DATE CHECK
         // ==========================
         if (dateCol >= 0) {
             const val = columns[dateCol];
